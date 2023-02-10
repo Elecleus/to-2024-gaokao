@@ -17,7 +17,7 @@ class PeriodForm:
         return(PeriodSec(second))
 
     def print(self):
-        print(f"There are {self.day} days {self.hour} hours {self.minute} minutes {self.second} seconds before gaokao in 2024.")
+        print(f"There are {self.day} days {self.hour} hours {self.minute} minutes {self.second} seconds before gaokao in 2024.\nEveryday is {100/self.day}% of the last days.")
 
 class PeriodSec:
 
@@ -41,7 +41,7 @@ class PeriodSec:
 class TimeUntil:
 
     def __init__(self):
-        self.last_time = PeriodSec(1717718400 - int(time.time())).trans()
+        self.last_time = PeriodSec(1717718400 + 3600 - int(time.time())).trans()
 
     def print(self):
         self.last_time.print()
